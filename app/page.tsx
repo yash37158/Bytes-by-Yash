@@ -31,7 +31,7 @@ export default async function HomePage() {
     <div className="min-h-screen bg-white">
       <header className="border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Bits of Yash 📝</h1>
+          <h1 className="text-2xl font-bold">Bytes by Yash 📝</h1>
           <div className="flex items-center gap-4">
             {user ? (
               <>
