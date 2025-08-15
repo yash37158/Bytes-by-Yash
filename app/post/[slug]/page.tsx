@@ -7,6 +7,7 @@ import { Calendar, Clock, Eye, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import ShareButtons from "@/components/blog/share-buttons"
 
 interface PostPageProps {
   params: {
@@ -94,6 +95,9 @@ export default async function PostPage({ params }: PostPageProps) {
     .neq("id", post.id)
     .limit(3)
 
+  // Construct the full URL for sharing
+  const postUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/post/${params.slug}`
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -146,6 +150,14 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
           </div>
         </header>
+
+        {/* Share Buttons */}
+        <ShareButtons
+          title={post.title}
+          url={postUrl}
+          excerpt={post.excerpt}
+          author={post.profiles.full_name}
+        />
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none mb-12">
