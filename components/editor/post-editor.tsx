@@ -188,9 +188,9 @@ export default function PostEditor({ categories, mode = "create", post }: PostEd
                       em: ({children}) => <em className="italic text-gray-800">{children}</em>,
                       code: ({children}) => <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-gray-800">{children}</code>,
                       pre: ({children}) => <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto my-4">{children}</pre>,
-                      ul: ({children}) => <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>,
-                      ol: ({children}) => <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>,
-                      li: ({children}) => <li className="text-gray-700">{children}</li>
+                      ul: ({children}) => <ul className="list-disc list-outside ml-6 mb-4 space-y-2">{children}</ul>,
+                      ol: ({children}) => <ol className="list-decimal list-outside ml-6 mb-4 space-y-2">{children}</ol>,
+                      li: ({children}) => <li className="text-gray-700 leading-relaxed">{children}</li>
                     }}
                   >
                     {content}
